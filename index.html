@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أفق ليلي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+
+    <div id="welcome-overlay" class="welcome-overlay">
+        <div class="glass-card welcome-card">
+            <h3>أهلاً وسهلاً بكم</h3>
+            <p>مرحباً بكم في منصة الأفق الليلي. نتمنى لك تجربة تصفح هادئة وممتعة تحاكي سكون الليل.</p>
+            <button class="close-btn" onclick="enterSite()">متابعة للموقع</button>
+        </div>
+    </div>
+
+    <div class="background-container"></div>
+    <div class="silhouette"></div>
+
+    <div class="main-content">
+        
+        <div id="default-sections">
+            
+            <div class="section-block">
+                <div class="section-title">قسم 1</div>
+                <div class="glass-card">
+                    <img src="img/img1.JPG" alt="قمر">
+                    <div class="card-text">
+                        <h3>مرحباً بكم في الأفق الليلي</h3>
+                        <p>مرحباً بكم في الأفق الليلي الحي، من ركائز الليل هي عمق مشاعرنا. ونقدم لكم تجربة الأفق الليلي المذهل والمستوحى من الهدوء والسكون في الأفق الليلي.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-title">قسم 2</div>
+                <div class="glass-card">
+                    <img src="img/img1.JPG" alt="تأمل">
+                    <div class="card-text">
+                        <h3>هدوء السكون الليلي</h3>
+                        <p>ماذا يخبئ لنا الليل في الأفق البعيد؟ خطوط عميقة تحاكي مشاعر الطمأنينة والعزلة صممت خصيصاً للمتصفح المحب للهدوء الممزوج بجمال الأفق الليلي الساحر.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-title">قسم 3</div>
+                <div class="triple-grid">
+                    <div class="mini-card">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <h4>أضواء في الليل</h4>
+                        <p>المغزى من تفاعل الأجرام والمجرات في الكون الشاسع.</p>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fa-solid fa-compass"></i>
+                        <h4>المنيفة</h4>
+                        <p>الآفاق التي نراها في الاتجاهات والمسارات الحيوية.</p>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <h4>نسمة التجربة</h4>
+                        <p>أطروحة تحاكي الاستمرارية والتقنية في الفضاء الرقمي.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-title">قسم N</div>
+                <div class="footer-card">
+                    <span>© 2026 Night Horizon. Copyright</span>
+                    <div class="footer-links">
+                        <span onclick="showAboutBox()">من نحن</span>
+                        <span onclick="showVisionBox()">رؤيتنا</span>
+                        <span>اتصل بنا</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section-block" id="about-box">
+            <div class="section-title">من نحن</div>
+            <div class="glass-card about-card-layout">
+                <div class="card-text">
+                    <h3>من نحن - الأفق الليلي</h3>
+                    <p>هنا تكتب الكلام الذي تريده تماماً عن موقعك! تم تصميم هذه المساحة لتظهر بتأثير زجاجي أنيق متناسق مع التصميم الأصلي وبحركة انسيابية عند الضغط على خيار "من نحن".</p>
+                </div>
+                <button class="close-btn" onclick="showDefaultSections()">إغلاق والعودة</button>
+            </div>
+        </div>
+
+        <div class="section-block" id="vision-box">
+            <div class="section-title">رؤيتنا</div>
+            <div class="glass-card about-card-layout">
+                <div class="card-text">
+                    <h3>رؤية المستقبل</h3>
+                    <p>ماذا يخبئ لنا الليل في الأفق البعيد؟ خطوط عميقة تحاكي مشاعر الطمأنينة والعزلة صممت خصيصاً للمتصفح المحب للهدوء الممزوج بجمال الأفق الليلي الساحر.</p>
+                </div>
+                <button class="close-btn" onclick="showDefaultSections()">إغلاق والعودة</button>
+            </div>
+        </div>
+
+        <div class="section-block" id="environment-box">
+            <div class="section-title">البيئة</div>
+            <div class="glass-card about-card-layout">
+                <div class="card-text">
+                    <h3>بيئتنا الهادئة</h3>
+                    <p>نهتم بخلق فضاء رقمي مريح ومستدام بصرياً، يقلل من إجهاد العين ويوفر واجهة تفاعلية تحاكي سكون الطبيعة والليل لراحة المتصفح المستمر.</p>
+                </div>
+                <button class="close-btn" onclick="showDefaultSections()">إغلاق والعودة</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sidebar">
+        <div>
+            <div class="sidebar-header">
+                <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+                <div class="logo">
+                    أفق ليلي
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">المعلومات</div>
+                <ul class="sidebar-menu">
+                    <li id="about-menu-item" onclick="showAboutBox()"><i class="fa-regular fa-circle-user"></i> من نحن</li>
+                    <li id="vision-menu-item" onclick="showVisionBox()"><i class="fa-regular fa-eye"></i> رؤيتنا</li>
+                    <li id="environment-menu-item" onclick="showEnvironmentBox()"><i class="fa-solid fa-seedling"></i> البيئة</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">آخر الإصدارات</div>
+                <div class="news-item">
+                    <p>آخر الإصدارات لتحديث تجربة المستخدم في الأفق الليلي.</p>
+                    <span>أمس</span>
+                </div>
+                <div class="news-item">
+                    <p>أبرز التحديثات البرمجية والجمالية المضافة مؤخراً.</p>
+                    <span>قبل أسبوع</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="sidebar-title">طرق التواصل</div>
+            <div class="social-links">
+                <a href="https://instagram.com/@Pi_B" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://instagram.com/@U42a" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/@ibk2_" target="_blank" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <span class="sparkle-icon" style="font-size: 2.5rem; margin-top: 30px; cursor: default;">✦</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      // تعريف كافة حاويات المحتوى
+const defaultSections = document.getElementById('default-sections');
+const aboutBox = document.getElementById('about-box');
+const visionBox = document.getElementById('vision-box');
+const environmentBox = document.getElementById('environment-box');
+const welcomeOverlay = document.getElementById('welcome-overlay');
+
+// تعريف أزرار القائمة الجانبية
+const aboutMenuItem = document.getElementById('about-menu-item');
+const visionMenuItem = document.getElementById('vision-menu-item');
+const environmentMenuItem = document.getElementById('environment-menu-item');
+
+// دالة دخول الموقع مع تأثير اختفاء ناعم وضبابية تتلاشى تدريجياً
+function enterSite() {
+    welcomeOverlay.classList.add('fade-out');
+    
+    // الانتظار حتى تنتهي الحركة ثم حذف النافذة تماماً من الشاشة
+    setTimeout(() => {
+        welcomeOverlay.style.display = 'none';
+    }, 90000); 
+}
+
+function clearAll() {
+    defaultSections.style.display = 'none';
+    aboutBox.style.display = 'none';
+    visionBox.style.display = 'none';
+    environmentBox.style.display = 'none';
+
+    aboutMenuItem.classList.remove('active');
+    visionMenuItem.classList.remove('active');
+    environmentMenuItem.classList.remove('active');
+}
+
+function showAboutBox() {
+    clearAll();
+    aboutBox.style.display = 'flex';
+    aboutMenuItem.classList.add('active');
+}
+
+function showVisionBox() {
+    clearAll();
+    visionBox.style.display = 'flex';
+    visionMenuItem.classList.add('active');
+}
+
+function showEnvironmentBox() {
+    clearAll();
+    environmentBox.style.display = 'flex';
+    environmentMenuItem.classList.add('active');
+}
+
+function showDefaultSections() {
+    clearAll();
+    defaultSections.style.display = 'flex';
+}
+    </script>
+</body>
+</html>

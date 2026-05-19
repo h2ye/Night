@@ -1,0 +1,465 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #0d1b2a;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row-reverse; 
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* الخلفية والمؤثرات */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(13, 27, 42, 0.4), rgba(13, 27, 42, 0.6)), 
+                url('https://i.ytimg.com/vi/s_YQOrpfZ28/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDKk-NTEIpczKxlznXSUMby1Zl0NQ') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+}
+
+/* الصورة الظلية للشخص */
+.silhouette {
+    position: fixed;
+    bottom: 0;
+    right: 10%; 
+    width: 35%;
+    height: 85%;
+    background: url('') no-repeat center bottom;
+    background-size: contain;
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+    filter: brightness(0) contrast(100%);
+    z-index: -1;
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0));
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-right: 50px; 
+}
+
+#default-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.main-content::-webkit-scrollbar {
+    width: 6px;
+}
+.main-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.section-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    font-weight: 600;
+    opacity: 0.8;
+    text-align: left;
+    max-width: 700px;
+    margin-left: auto; 
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    max-width: 700px;
+    margin-left: auto; 
+}
+
+.glass-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.card-text h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.card-text p {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* قسم الميزات الثلاثية */
+.triple-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 700px;
+    margin-left: auto;
+}
+
+.mini-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.mini-card i {
+    font-size: 1.5rem;
+    color: #e2e8f0;
+    opacity: 0.9;
+}
+
+.mini-card h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.mini-card p {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* الفوتر */
+.footer-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 15px 30px;
+    max-width: 700px;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links span {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.footer-links span:hover {
+    color: #fff;
+}
+
+/* تصميم بوكس من نحن والتحكم بظهوره */
+#about-box, #vision-box, #environment-box {
+    display: none; 
+}
+
+.about-card-layout {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* القائمة الجانبية */
+.sidebar {
+    width: 320px;
+    background: rgba(13, 27, 42, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.menu-toggle {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.sidebar-section {
+    margin-bottom: 35px;
+}
+
+.sidebar-title {
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-menu li {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar-menu li:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.news-item {
+    margin-bottom: 15px;
+}
+
+.news-item p {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+.news-item span {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+/* أزرار التواصل */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sparkle-icon {
+    align-self: center;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 20px;
+}
+
+/* إخفاء الأقسام الجديدة عند بداية التحميل لمنع اللخبطة */
+#about-box, #vision-box, #environment-box {
+    display: none;
+}
+
+/* 1. الخلفية الغامرة - نسخة مطورة للأداء العالي والسلاسة الفائقة */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 20, 32, 0.55); /* تعميق التعتيم ليعوض تقليل الضبابية لو لزم الأمر */
+    backdrop-filter: blur(20px);       
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 10000;                     
+    opacity: 1;
+    visibility: visible;
+    
+    /* خدعة كرت الشاشة: تخبر المتصفح بتجهيز المعالج للحركة لمنع التقطيع */
+    will-change: opacity, visibility; 
+    
+    /* أنميشن فائق السرعة ورشيق جداً (200ms فقط بدلاً من 350) */
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 1, 1), 
+                visibility 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* تأثير الاختفاء الصاروخي والسلس */
+.welcome-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    /* أزلنا أنميشن التلاشي التدريجي للضبابية لأنه هو سبب البطء والثقل */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* 2. كرت الترحيب - سريع وخفيف الاستجابة */
+.welcome-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1); 
+    max-width: 420px !important;
+    width: 90%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    text-align: center;     
+    padding: 35px 25px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    border-radius: 24px !important;
+    box-sizing: border-box;
+    
+    will-change: transform;
+    /* أنميشن سريع متناسق مع الخلفية */
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* تأثير حركي خاطف للكرت أثناء الاختفاء */
+.welcome-overlay.fade-out .welcome-card {
+    transform: translate(-50%, -52%) scale(0.98);
+}
+
+.welcome-card h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.welcome-card p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 30px; 
+}
+
+/* 3. الزر الممتد - استجابة فورية بدون أي تأخير */
+.welcome-card .close-btn {
+    width: 100%;            
+    box-sizing: border-box;
+    padding: 12px;          
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.welcome-card .close-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.welcome-card .close-btn:active {
+    transform: scale(0.98); /* تأثير ضغطة حقيقية خفيفة جداً فور النقر */
+}
+
+/* شاشات الهواتف */
+@media (max-width: 968px) {
+    body {
+        flex-direction: column-reverse;
+        overflow-y: auto;
+        height: auto;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .triple-grid {
+        grid-template-columns: 1fr;
+    }
+    .glass-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .silhouette {
+        display: none;
+    }
+}
